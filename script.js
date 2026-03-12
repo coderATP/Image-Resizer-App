@@ -98,18 +98,31 @@ class ImageResizerApp {
     return { width, height }
   }
 
-  drawWatermark(width, height){
-    const text = this.watermarkText.value || "ATP Game Studio"
-    this.ctx.save()
-    this.ctx.globalAlpha = 0.25
-    this.ctx.fillStyle = "white"
-    this.ctx.translate(width/2, height/2)
-    this.ctx.rotate(-Math.PI/4)
-    this.ctx.font = "40px Arial"
-    this.ctx.textAlign = "center"
-    this.ctx.fillText(text, 0, 0)
-    this.ctx.restore()
-  }
+drawWatermark(width, height){
+
+const text = this.watermarkText.value || "ATP Game Studio"
+
+this.ctx.save()
+
+this.ctx.globalAlpha = 0.50
+this.ctx.fillStyle = "white"
+
+this.ctx.translate(width/2, height/2)
+
+/* bottom-left → top-right diagonal */
+this.ctx.rotate(Math.PI/4)
+
+/* scale font to image size */
+const fontSize = Math.floor(Math.min(width,height)/8)
+
+this.ctx.font = fontSize + "px Arial"
+this.ctx.textAlign = "center"
+
+this.ctx.fillText(text,0,0)
+
+this.ctx.restore()
+
+}
 
   resizeImages(){
     if(this.images.length === 0){
@@ -142,9 +155,11 @@ class ImageResizerApp {
       const btn = document.createElement("a")
       const dotIndex = name.lastIndexOf(".")
       const baseName = dotIndex !== -1 ? name.slice(0, dotIndex) : name
-      const extension = dotIndex !== -1 ? name.slice(dotIndex) : ".jpg"
+      
       btn.href = dataURL
-      btn.download = `${baseName}_resized${extension}`
+      
+      /* new naming format */
+      btn.download = `_${baseName}.jpg`
       btn.textContent = "Download"
       btn.className = "downloadBtn"
 
