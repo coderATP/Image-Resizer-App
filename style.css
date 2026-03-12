@@ -11,10 +11,10 @@ body{
 /* main container */
 .container{
     width:100%;
-    max-width:600px; /* optional max width for large screens */
+    max-width:1280px; /* optional max width for large screens */
     background:white;
-    padding:20px;
-    border-radius:10px;
+    padding:2%;
+    border-radius:3%;
     box-shadow:0 0 12px rgba(0,0,0,0.1);
     box-sizing:border-box;
 }
@@ -22,21 +22,21 @@ body{
 /* headings */
 h2{
     margin-top:0;
-    margin-bottom:15px;
+    margin-bottom:3%;
     text-align:center;
 }
 
 /* sections */
 .section{
-    margin-bottom:15px;
+    margin-bottom:3%;
 }
 
 /* labels */
 .labelTitle{
     font-weight:bold;
     display:block;
-    margin-bottom:6px;
-    font-size:14px;
+    margin-bottom:2%;
+    font-size: 1.2rem;
 }
 
 /* inputs */
@@ -44,11 +44,12 @@ input[type="number"],
 input[type="text"],
 input[type="file"]{
     width:100%;
-    padding:6px;
+    height: 80%;
+    padding:2%;
     box-sizing:border-box;
-    border:1px solid #ccc;
-    border-radius:4px;
-    font-size:13px;
+    border: 5% solid #ccc;
+    border-radius:10%;
+    font-size:1.3rem;
 }
 
 /* width + height row */
@@ -149,38 +150,54 @@ canvas{
 }
 
 /* Media query for wider screens */
-@media (min-width: 300px){
+@media (min-width: 420px){
     body{
-        padding:30px;
+        padding:5%;
     }
-
+    .section{
+        margin-bottom: 3%;
+    }
+    .labelTitle{
+        font-weight:bold;
+        display:block;
+        margin-bottom:2%;
+        font-size: 2.5rem;
+    }
     h2{
-        font-size:22px;
+        font-size: 3.5rem;
     }
 
     .labelTitle, .checkboxRow, .compressionRow{
-        font-size:16px;
+        font-size: 2.7rem;
     }
-
+    #aspectRatio, #watermarkToggle, #radio {
+        height: 3em;
+        width: 3em;
+    }
+    #sizeLabel{
+        font-size: 3em;
+    }
     input[type="number"],
     input[type="text"],
     input[type="file"]{
-        padding:10px;
-        font-size:16px;
+        padding: 3%;
+        font-size: 2.5rem;
+        width: 100%;
+        height: 65%;
     }
 
     button{
         padding:12px;
-        font-size:16px;
+        font-size:2.5rem;
     }
 
     .resultBox img{
-        width:80px;
-        height:80px;
+        width: 140px;
+        height: 140px;
     }
 
     .downloadBtn{
-        padding:6px 10px;
-        font-size:14px;
+        padding: 4% 6%;
+        font-size: 2rem;
     }
 }
