@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Image Resizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Image Resizer</h2>
+
+<div class="section">
+
+<label class="labelTitle">Upload Images</label>
+<input type="file" id="upload" accept="image/*" multiple>
+
+</div>
+
+
+<div class="section sizeRow">
+
+<div>
+<label>Width</label>
+<input type="number" id="width" placeholder="Width">
+</div>
+
+<div>
+<label>Height</label>
+<input type="number" id="height" placeholder="Height">
+</div>
+
+</div>
+
+
+<div class="section">
+
+<label class="checkboxRow">
+<input type="checkbox" id="aspectRatio" checked>
+Preserve Aspect Ratio
+</label>
+
+</div>
+
+
+<div class="section">
+
+<label class="checkboxRow">
+<input type="checkbox" id="watermarkToggle">
+Add Watermark
+</label>
+
+<input
+type="text"
+id="watermarkText"
+value="ATP Game Studio"
+placeholder="Watermark text"
+class="watermarkInput"
+/>
+
+</div>
+
+
+<div class="section">
+
+<label class="labelTitle">Compression Level</label>
+
+<div class="compressionRow">
+<label><input type="radio" name="compression" value="0.9"> Light</label>
+<label><input type="radio" name="compression" value="0.7" checked> Medium</label>
+<label><input type="radio" name="compression" value="0.55"> Strong</label>
+<label><input type="radio" name="compression" value="0.3"> Extreme</label>
+</div>
+
+</div>
+
+
+<button id="resizeBtn">Resize Images</button>
+
+<canvas id="canvas"></canvas>
+
+<div id="downloads"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

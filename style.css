@@ -1,0 +1,186 @@
+/* ImageResizerApp - style.css */
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:20px;
+    display:flex;
+    justify-content:center;
+}
+
+/* main container */
+.container{
+    width:100%;
+    max-width:600px; /* optional max width for large screens */
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 12px rgba(0,0,0,0.1);
+    box-sizing:border-box;
+}
+
+/* headings */
+h2{
+    margin-top:0;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+/* sections */
+.section{
+    margin-bottom:15px;
+}
+
+/* labels */
+.labelTitle{
+    font-weight:bold;
+    display:block;
+    margin-bottom:6px;
+    font-size:14px;
+}
+
+/* inputs */
+input[type="number"],
+input[type="text"],
+input[type="file"]{
+    width:100%;
+    padding:6px;
+    box-sizing:border-box;
+    border:1px solid #ccc;
+    border-radius:4px;
+    font-size:13px;
+}
+
+/* width + height row */
+.sizeRow{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap; /* wrap on small screens */
+}
+
+.sizeRow div{
+    flex:1 1 45%; /* scale nicely */
+}
+
+/* checkbox row */
+.checkboxRow{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex-wrap:wrap;
+    font-size:13px;
+}
+
+/* compression */
+.compressionRow{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    font-size:13px;
+}
+
+/* watermark input */
+.watermarkInput{
+    margin-top:6px;
+    display:none;
+}
+
+/* button */
+button{
+    width:100%;
+    padding:10px;
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+button:hover{
+    background:#0056b3;
+}
+
+/* canvas hidden */
+canvas{
+    display:none;
+}
+
+/* results grid */
+#downloads{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(100px, 1fr)); /* responsive */
+    gap:10px;
+}
+
+/* result card */
+.resultBox{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+    background:#fafafa;
+    padding:8px;
+    border-radius:6px;
+    box-shadow:0 0 4px rgba(0,0,0,0.1);
+}
+
+/* preview */
+.resultBox img{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:4px;
+}
+
+/* download button */
+.downloadBtn{
+    background:#28a745;
+    color:white;
+    padding:5px 8px;
+    font-size:12px;
+    border-radius:4px;
+    text-decoration:none;
+}
+
+.downloadBtn:hover{
+    background:#1e7e34;
+}
+
+/* Media query for wider screens */
+@media (min-width: 300px){
+    body{
+        padding:30px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    .labelTitle, .checkboxRow, .compressionRow{
+        font-size:16px;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    input[type="file"]{
+        padding:10px;
+        font-size:16px;
+    }
+
+    button{
+        padding:12px;
+        font-size:16px;
+    }
+
+    .resultBox img{
+        width:80px;
+        height:80px;
+    }
+
+    .downloadBtn{
+        padding:6px 10px;
+        font-size:14px;
+    }
+}
