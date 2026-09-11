@@ -68,16 +68,137 @@ class="watermarkInput"
 <label class="labelTitle">Compression Level</label>
 
 <div class="compressionRow">
-<label><input type="radio" id="radio" name="compression" value="0.65"> Light</label>
-<label><input type="radio" id="radio" name="compression" value="0.45"> Medium</label>
-<label><input type="radio" id="radio" name="compression" value="0.25"> Strong</label>
-<label><input type="radio" id="radio" name="compression" value="0.05" checked> Extreme</label>
+
+<label>
+<input
+type="radio"
+name="compression"
+value="0.65"
+>
+Light
+</label>
+
+<label>
+<input
+type="radio"
+name="compression"
+value="0.45"
+>
+Medium
+</label>
+
+<label>
+<input
+type="radio"
+name="compression"
+value="0.25"
+>
+Strong
+</label>
+
+<label>
+<input
+type="radio"
+name="compression"
+value="0.05"
+checked
+>
+Extreme
+</label>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<label class="labelTitle">Download Format</label>
+
+<div class="formatRow">
+
+<label>
+<input
+type="radio"
+name="downloadFormat"
+value="jpg"
+checked
+>
+JPG
+</label>
+
+<label>
+<input
+type="radio"
+name="downloadFormat"
+value="png"
+>
+Transparent PNG
+</label>
+
 </div>
 
 </div>
 
 
-<button id="resizeBtn">Resize Images</button>
+<div
+class="section"
+id="pngCompressionSection"
+style="display:none;"
+>
+
+<label class="labelTitle">
+PNG Optimization
+</label>
+
+<div class="compressionRow">
+
+<label>
+<input
+type="radio"
+name="pngCompression"
+value="lossless"
+>
+Lossless
+</label>
+
+<label>
+<input
+type="radio"
+name="pngCompression"
+value="light"
+>
+Light
+</label>
+
+<label>
+<input
+type="radio"
+name="pngCompression"
+value="strong"
+checked
+>
+Strong
+</label>
+
+<label>
+<input
+type="radio"
+name="pngCompression"
+value="extreme"
+>
+Extreme
+</label>
+
+</div>
+
+</div>
+
+
+<button id="resizeBtn">
+Resize Images
+</button>
+
 
 <canvas id="canvas"></canvas>
 
@@ -85,6 +206,10 @@ class="watermarkInput"
 
 </div>
 
+
+<!-- UPNG.js must load BEFORE script.js -->
+<script src="pako.js"></script>
+<script src="UPNG.js"></script>
 <script src="script.js"></script>
 
 </body>
