@@ -1,211 +1,412 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Image Resizer</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<div class="container">
-
-<h2>Image Resizer</h2>
-
-<div class="section">
-
-<label class="labelTitle">Upload Images</label>
-<input type="file" id="upload" accept="image/*" multiple>
-
-</div>
-
-
-<div class="section sizeRow">
-
-<div>
-<label id="sizeLabel">Width</label>
-<input type="number" id="width" placeholder="Width">
-</div>
-
-<div>
-<label id="sizeLabel">Height</label>
-<input type="number" id="height" placeholder="Height">
-</div>
-
-</div>
-
-
-<div class="section">
-
-<label class="checkboxRow">
-<input type="checkbox" id="aspectRatio" checked>
-Preserve Aspect Ratio
-</label>
-
-</div>
-
-
-<div class="section">
-
-<label class="checkboxRow">
-<input type="checkbox" id="watermarkToggle">
-Add Watermark
-</label>
-
-<input
-type="text"
-id="watermarkText"
-value="ATP Game Studio"
-placeholder="Watermark text"
-class="watermarkInput"
-/>
-
-</div>
-
-
-<div class="section">
-
-<label class="labelTitle">Compression Level</label>
-
-<div class="compressionRow">
-
-<label>
-<input
-type="radio"
-name="compression"
-value="0.65"
->
-Light
-</label>
-
-<label>
-<input
-type="radio"
-name="compression"
-value="0.45"
->
-Medium
-</label>
-
-<label>
-<input
-type="radio"
-name="compression"
-value="0.25"
->
-Strong
-</label>
-
-<label>
-<input
-type="radio"
-name="compression"
-value="0.05"
-checked
->
-Extreme
-</label>
-
-</div>
-
-</div>
-
-
-<div class="section">
-
-<label class="labelTitle">Download Format</label>
-
-<div class="formatRow">
-
-<label>
-<input
-type="radio"
-name="downloadFormat"
-value="jpg"
-checked
->
-JPG
-</label>
-
-<label>
-<input
-type="radio"
-name="downloadFormat"
-value="png"
->
-Transparent PNG
-</label>
-
-</div>
-
-</div>
-
-
-<div
-class="section"
-id="pngCompressionSection"
-style="display:none;"
+    <meta charset="UTF-8"><meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
 >
 
-<label class="labelTitle">
-PNG Optimization
-</label>
+<title>Image Resizer — ATP Game Studio</title>
 
-<div class="compressionRow">
-
-<label>
-<input
-type="radio"
-name="pngCompression"
-value="lossless"
+<meta
+    name="description"
+    content="Free browser-based image resizer and compressor by ATP Game Studio. Resize multiple images, preserve aspect ratio, add watermarks, compress images, and download JPG or transparent PNG files."
 >
-Lossless
-</label>
 
-<label>
-<input
-type="radio"
-name="pngCompression"
-value="light"
+<meta
+    name="author"
+    content="ATP Game Studio"
 >
-Light
-</label>
 
-<label>
-<input
-type="radio"
-name="pngCompression"
-value="strong"
-checked
+<meta
+    name="robots"
+    content="index, follow"
 >
-Strong
-</label>
 
-<label>
-<input
-type="radio"
-name="pngCompression"
-value="extreme"
+<meta
+    name="theme-color"
+    content="#050713"
 >
-Extreme
-</label>
+
+<link
+    rel="canonical"
+    href="https://image-resizer.atpgamestudio.com.ng/"
+>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
+
+<meta
+    property="og:type"
+    content="website"
+>
+
+<meta
+    property="og:title"
+    content="Image Resizer — ATP Game Studio"
+>
+
+<meta
+    property="og:description"
+    content="Resize and compress images directly in your browser. Preserve aspect ratio, add watermarks, and download JPG or transparent PNG images."
+>
+
+<meta
+    property="og:url"
+    content="https://image-resizer.atpgamestudio.com.ng/"
+>
+
+<meta
+    property="og:site_name"
+    content="ATP Game Studio"
+>
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="Image Resizer — ATP Game Studio"
+>
+
+<meta
+    name="twitter:description"
+    content="A free browser-based image resizing and compression tool by ATP Game Studio."
+>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://image-resizer.atpgamestudio.com.ng/#application",
+    "name": "Image Resizer",
+    "url": "https://image-resizer.atpgamestudio.com.ng/",
+    "description": "A free browser-based image resizing and compression tool for resizing multiple images, preserving aspect ratio, adding watermarks, compressing images, and exporting JPG or transparent PNG files.",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires a modern web browser with JavaScript enabled.",
+    "isAccessibleForFree": true,
+    "inLanguage": "en",
+    "creator": {
+        "@id": "https://atpgamestudio.com.ng/#organization"
+    },
+    "publisher": {
+        "@id": "https://atpgamestudio.com.ng/#organization"
+    },
+    "isPartOf": {
+        "@id": "https://atpgamestudio.com.ng/#website"
+    }
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://atpgamestudio.com.ng/#organization",
+    "name": "ATP Game Studio",
+    "url": "https://atpgamestudio.com.ng/"
+}
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://atpgamestudio.com.ng/#website",
+    "name": "ATP Game Studio",
+    "url": "https://atpgamestudio.com.ng/",
+    "publisher": {
+        "@id": "https://atpgamestudio.com.ng/#organization"
+    }
+}
+</script>
+
+</head><body><div class="container">
+
+    <h2>Image Resizer</h2>
+
+    <div class="section">
+
+        <label class="labelTitle">
+            Upload Images
+        </label>
+
+        <input
+            type="file"
+            id="upload"
+            accept="image/*"
+            multiple
+        >
+
+    </div>
+
+    <div class="section sizeRow">
+
+        <div>
+
+            <label id="sizeLabel">
+                Width
+            </label>
+
+            <input
+                type="number"
+                id="width"
+                placeholder="Width"
+            >
+
+        </div>
+
+        <div>
+
+            <label id="sizeLabel">
+                Height
+            </label>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="Height"
+            >
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <label class="checkboxRow">
+
+            <input
+                type="checkbox"
+                id="aspectRatio"
+                checked
+            >
+
+            Preserve Aspect Ratio
+
+        </label>
+
+    </div>
+
+    <div class="section">
+
+        <label class="checkboxRow">
+
+            <input
+                type="checkbox"
+                id="watermarkToggle"
+            >
+
+            Add Watermark
+
+        </label>
+
+        <input
+            type="text"
+            id="watermarkText"
+            value="ATP Game Studio"
+            placeholder="Watermark text"
+            class="watermarkInput"
+        >
+
+    </div>
+
+    <div class="section">
+
+        <label class="labelTitle">
+            Compression Level
+        </label>
+
+        <div class="compressionRow">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="compression"
+                    value="0.65"
+                >
+
+                Light
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="compression"
+                    value="0.45"
+                >
+
+                Medium
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="compression"
+                    value="0.25"
+                >
+
+                Strong
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="compression"
+                    value="0.05"
+                    checked
+                >
+
+                Extreme
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <label class="labelTitle">
+            Download Format
+        </label>
+
+        <div class="formatRow">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="downloadFormat"
+                    value="jpg"
+                    checked
+                >
+
+                JPG
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="downloadFormat"
+                    value="png"
+                >
+
+                Transparent PNG
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <div
+        class="section"
+        id="pngCompressionSection"
+        style="display: none;"
+    >
+
+        <label class="labelTitle">
+            PNG Optimization
+        </label>
+
+        <div class="compressionRow">
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="pngCompression"
+                    value="lossless"
+                >
+
+                Lossless
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="pngCompression"
+                    value="light"
+                >
+
+                Light
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="pngCompression"
+                    value="strong"
+                    checked
+                >
+
+                Strong
+
+            </label>
+
+            <label>
+
+                <input
+                    type="radio"
+                    name="pngCompression"
+                    value="extreme"
+                >
+
+                Extreme
+
+            </label>
+
+        </div>
+
+    </div>
+
+    <button id="resizeBtn">
+        Resize Images
+    </button>
+
+    <div
+        class="privacyNotice"
+        role="note"
+        aria-label="Privacy information"
+    >
+
+        <strong>
+            Privacy
+        </strong>
+
+        <p>
+            Your images are processed directly in your browser.
+            This tool does not upload your selected images to
+            ATP Game Studio's servers for resizing or compression.
+            For sensitive images, use the tool only on a device and
+            browser you trust.
+        </p>
+
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="downloads"></div>
 
 </div>
-
-</div>
-
-
-<button id="resizeBtn">
-Resize Images
-</button>
-
-
-<canvas id="canvas"></canvas>
-
-<div id="downloads"></div>
-
-</div>
-
 
 <!-- UPNG.js must load BEFORE script.js -->
 <script src="pako.js"></script>
